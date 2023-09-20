@@ -3,7 +3,7 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Digibeard\\FdtDocsExchange\\": "src/"
+            "App\\FdtDocsExchange\\": "src/"
         }
     },
     "authors": [
@@ -12,5 +12,7 @@
             "email": "vetsinen@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "anlutro/curl": "^1.5"
+    }
 }
