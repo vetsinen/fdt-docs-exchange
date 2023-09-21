@@ -11,12 +11,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($username === 'fdtuser'  && $password === 'g4wfs94sbe94xg62') {
         echo "Login successful!";
         setcookie('username', $username, time() + 86400, '/');
-        setcookie('imgs', '0', time() + 86400, '/');
-        setcookie('docs', '0', time() + 86400, '/');
 
         session_start();
         $_SESSION['username'] = $username;
         $_SESSION['setfolder'] = getFolderForUserFiles($username);
+        $_SESSION['img'] = 0;
+        $_SESSION['doc'] = 0;
 
         header("Location: /");
     } else {
