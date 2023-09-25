@@ -1,25 +1,25 @@
 <?php
 require_once ('../src/utils.php');
 
-// Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
     // In a real-world scenario, you should securely validate and hash the password
     // and perform database queries to check the user's credentials.
     // For demonstration purposes, let's check for a hardcoded username and password.
-    if ($username === 'fdtuser'  && $password === 'g4wfs94sbe94xg62') {
+    if ($username === 'odense'  && $password === 'jAc4D9Ug4XH3') {
         echo "Login successful!";
+        session_start();
         setcookie('username', $username, time() + 86400, '/');
 
-        session_start();
         $_SESSION['username'] = $username;
         $_SESSION['setfolder'] = getFolderForUserFiles($username);
         $_SESSION['img'] = 0;
         $_SESSION['doc'] = 0;
 
         header("Location: /");
-    } else {
+    }
+    else {
         // Invalid login
         echo "Invalid username or password. Please try again.";
         header("Location: /login.php");
@@ -32,8 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>please, login - image and documents uploader</title>
-    <!-- Add the Bulma CSS CDN link here or download and link it locally -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/bulma.min.css">
     <style>
         /* Custom styles */
         .login-container {
@@ -57,13 +56,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <div class="field">
                             <label class="label">Username</label>
                             <div class="control">
-                                <input class="input" name="username" type="text" value="fdtuser" placeholder="Your username">
+                                <input class="input" name="username" type="text" value="odense" placeholder="Your username">
                             </div>
                         </div>
                         <div class="field">
                             <label class="label">Password</label>
                             <div class="control">
-                                <input class="input" name="password" type="password" value="g4wfs94sbe94xg62" placeholder="Your password">
+                                <input class="input" name="password" type="password" value="jAc4D9Ug4XH3" placeholder="Your password">
                             </div>
                         </div>
                         <div class="field">

@@ -17,10 +17,10 @@ function getFolderForUserFiles(string $username) {
     while (file_exists($folderForSet));
     try {
         mkdir($folderForSet);
+        mkdir($folderForSet.'tmp/');
+
     }
     catch (Exception $exception){}
     return $folderForSet;
 }
-
-//echo getFolderForUserFiles('fdt');
 

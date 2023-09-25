@@ -1,3 +1,4 @@
 /vendor/
 .idea
 www/upload
+.env

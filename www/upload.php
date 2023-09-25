@@ -8,7 +8,7 @@ if (isset($_FILES['doc'])) uploadFile('doc');
 function uploadFile(string $type)
 {
     if ($_SESSION[$type]>=config['max'.$type]) return;
-    $imagesFolder = $_SESSION['setfolder'];
+    $imagesFolder = $_SESSION['setfolder'].'tmp/';
 
     if (!empty($_FILES)) {
         $temp = $_FILES[$type]['tmp_name'];
