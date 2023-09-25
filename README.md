@@ -1,3 +1,3 @@
 # fdt-docs-exchange
 
-php -S localhost:8000
+http://2759783.odense.web.hosting-test.net/
